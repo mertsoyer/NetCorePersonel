@@ -1,0 +1,29 @@
+﻿@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_SidebarLayout.cshtml";
+}
+
+<table class="table table-bordered" >
+    <tr>
+        <th>Department ID</th>
+        <th>Department Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Info</th>
+    </tr>
+    @foreach (var department in Model)
+    {
+        <tr>
+            <td>@department.Id</td>
+            <td>@department.Name</td>
+            <td><a href="/department/DeleteDepartment/@department.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/department/UpdateDepartment/@department.Id" class="btn btn-success">Update</a></td>
+            <td><a href="#" class="btn btn-info">Info</a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/department/AddDepartment" class="btn btn-info">New Department</a>
+

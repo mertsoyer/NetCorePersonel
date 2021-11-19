@@ -1,0 +1,17 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "UpdateDepartment";
+    Layout = "~/Views/Shared/_SidebarLayout.cshtml";
+}
+
+<h1>Update Department</h1>
+
+<form asp-action="UpdateDepartment" asp-controller="Department" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+    <input type="text" asp-for="Name" />
+
+    <button>Güncelle</button>
+
+
+</form>
