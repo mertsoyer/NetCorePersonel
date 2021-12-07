@@ -1,0 +1,33 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "AddEmploye";
+    Layout = "~/Views/Shared/_SidebarLayout.cshtml";
+}
+
+<h1>Add Employe</h1>
+
+
+<form asp-action="AddEmployee" asp-controller="Employee" method="post">
+
+
+    <input type="text" asp-for="EmployeeName" placeholder=" Name" />
+    <input type="text" asp-for="EmployeeSurname" placeholder=" Surname" />
+    <input type="text" asp-for="City" placeholder="City" />
+
+    <!-- #region HTML Helper ile, Controller üzerinden ayrıştırdığımız datayı view'de dropdown ile listeleme -->
+    
+    @Html.DropDownListFor(x => x.Departments.Id, (List<SelectListItem>
+        )ViewBag.departmanListele, new { @class = "form-control" })
+
+    <!-- #endregion -->
+    @*<select asp-for="Departments.Id" class="form-control" asp-items="@(new SelectList(ViewBag.departmanListele,"Id","Name"))">
+        <option value="">Please choose department</option>
+    </select>*@
+    <button class="btn btn-success">Add</button>
+</form>
+
+
+
+
+
+

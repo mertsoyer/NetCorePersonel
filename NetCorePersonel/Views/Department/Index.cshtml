@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_SidebarLayout.cshtml";
 }
 
-<table class="table table-bordered" >
+<table class="table table-bordered">
     <tr>
         <th>Department ID</th>
         <th>Department Name</th>
@@ -19,7 +19,7 @@
             <td>@department.Name</td>
             <td><a href="/department/DeleteDepartment/@department.Id" class="btn btn-danger">Delete</a></td>
             <td><a href="/department/UpdateDepartment/@department.Id" class="btn btn-success">Update</a></td>
-            <td><a href="#" class="btn btn-info">Info</a></td>
+            <td><a href="/department/DepartmentDetail/@department.Id" class="btn btn-success">Info</a></td>
 
         </tr>
     }

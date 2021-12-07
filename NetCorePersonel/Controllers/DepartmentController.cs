@@ -62,6 +62,14 @@ namespace NetCorePersonel.Controllers
 
         }
 
+        public IActionResult DepartmentDetail(int id)
+        {
+            var degerler=context.Employees.Where(x => x.DepartmentId == id).ToList(); // bağlı olan employeeleri ekrana basmak için
+            var birimAd = context.Departments.Where(x => x.Id == id).Select(y => y.Name).FirstOrDefault(); // birim adını ekrana bastırmak için
+            ViewBag.departmentName = birimAd;
+
+            return View(degerler);
+        }
 
     }
 }

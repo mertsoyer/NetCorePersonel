@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetCorePersonel.Models
 {
-    public class Context:DbContext
+    public class Context : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -14,6 +14,8 @@ namespace NetCorePersonel.Models
         }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }
